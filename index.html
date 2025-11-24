@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Sorting Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sorting Algorithm Visualizer</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="array-size">Array Size:</label>
+                <input type="range" id="array-size" min="5" max="100" value="30">
+                <span id="size-value">30</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="speed">Speed:</label>
+                <input type="range" id="speed" min="1" max="100" value="50">
+                <span id="speed-value">50</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="algorithm">Algorithm:</label>
+                <select id="algorithm">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="quick">Quick Sort</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button id="generate-btn">Generate New Array</button>
+                <button id="reset-btn">Reset Array</button>
+                <button id="sort-btn">Start Sorting</button>
+            </div>
+        </div>
+        
+        <div class="visualization">
+            <div id="array-container"></div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Algorithm:</span>
+                    <span id="current-alg">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Time Taken:</span>
+                    <span id="time-taken">0 ms</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Comparisons:</span>
+                    <span id="comparisons">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Swaps:</span>
+                    <span id="swaps">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="box comparing"></div>
+                <span>Comparing</span>
+            </div>
+            <div class="legend-item">
+                <div class="box swapping"></div>
+                <span>Swapping</span>
+            </div>
+            <div class="legend-item">
+                <div class="box sorted"></div>
+                <span>Sorted</span>
+            </div>
+            <div class="legend-item">
+                <div class="box pivot"></div>
+                <span>Pivot</span>
+            </div>
+            <div class="legend-item">
+                <div class="box default"></div>
+                <span>Default</span>
+            </div>
+        </div>
+        
+        <div class="code-section">
+            <div class="code-header">
+                <h3>Algorithm Code</h3>
+                <div class="language-selector">
+                    <select id="code-language">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="cpp">C++</option>
+                        <option value="c">C</option>
+                    </select>
+                </div>
+            </div>
+            <pre><code id="algorithm-code" class="language-javascript">// Select an algorithm to view its code</code></pre>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="script.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
